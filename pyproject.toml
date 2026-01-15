@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quant_methods"
+version = "0.1.0"
+description = "Quantitative methods and algorithms for finance"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Tom Lupo"}
+]
+keywords = ["quantitative finance", "monte carlo", "index tracking", "portfolio optimization"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = [
+    "numpy>=1.21",
+    "pandas>=1.3",
+    "scipy>=1.7",
+    "matplotlib>=3.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.1",
+]
+
+[project.urls]
+Repository = "https://github.com/tomlupo/quant_methods"
+
+[tool.setuptools.packages.find]
+include = ["monte_carlo_simulations*", "trade_calculation_stochastic_rounding*", "regression_methods*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
